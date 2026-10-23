@@ -1,4 +1,5 @@
 import SectionLabel from "../SectionLabel/SectionLabel.jsx";
+import useScrollReveal from "../../hooks/useScrollReveal.js";
 import "./Services.css";
 
 const services = [
@@ -15,14 +16,16 @@ const services = [
 ];
 
 export default function Services() {
+  const reveal = useScrollReveal();
+
   return (
-    <section id="services" className="services-section bg-[#1e1040] px-5 py-12 sm:px-10 lg:px-16 lg:py-20">
+    <section ref={reveal.ref} id="services" className={`services-section ${reveal.className} bg-[#1e1040] px-5 py-12 sm:px-10 lg:px-16 lg:py-20`}>
       <SectionLabel>What We Offer</SectionLabel>
       <h2 className="mb-3 font-display text-[clamp(1.75rem,4vw,3rem)] leading-tight text-white">Our <em className="text-violet-300">Services</em></h2>
       <p className="mb-10 max-w-2xl text-lg leading-[1.75] text-violet-200">
         Request what you need — we can provide it. From executive support to bookkeeping, our VAs are trained across every business function.
       </p>
-      <div className="services-section__grid grid gap-px bg-white/[0.08]">
+      <div className="services-section__grid reveal-stagger grid gap-px bg-white/[0.08]">
         {services.map(([title, description, color]) => (
           <article key={title} className="bg-[#0a0e16] p-7 transition-colors hover:bg-[#0f1420]">
             <div className="mb-3 flex items-center gap-3">

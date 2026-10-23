@@ -1,4 +1,5 @@
 import SectionLabel from "../SectionLabel/SectionLabel.jsx";
+import useScrollReveal from "../../hooks/useScrollReveal.js";
 import logo from "../../../logo.png";
 import "./Contact.css";
 
@@ -10,8 +11,10 @@ const contacts = [
 ];
 
 export default function Contact() {
+  const reveal = useScrollReveal();
+
   return (
-    <section id="contact" className="contact-section bg-[#0d0620]">
+    <section ref={reveal.ref} id="contact" className={`contact-section ${reveal.className} bg-[#0d0620]`}>
       <div className="contact-section__layout grid lg:grid-cols-2">
         <div className="relative flex min-h-[360px] flex-col items-center justify-center overflow-hidden bg-[#08041a] px-8 py-14 lg:min-h-[540px]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,#8b5cf620_0%,transparent_70%)]" />
@@ -26,7 +29,7 @@ export default function Contact() {
           <SectionLabel>Get in Touch</SectionLabel>
           <h2 className="mb-4 font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight text-white">Let's talk about <em className="text-violet-300">your needs.</em></h2>
           <p className="mb-10 text-[1.0625rem] leading-[1.75] text-violet-200">Reach out through any channel below. We respond within a few hours — no bots, no auto-replies.</p>
-          <div className="mb-8 flex flex-col gap-3">
+          <div className="reveal-stagger mb-8 flex flex-col gap-3">
             {contacts.map(([title, detail, href, style]) => (
               <a key={title} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className={`contact-card ${style}`}>
                 <span className="text-xl" aria-hidden="true">{title === "Facebook" ? "f" : title === "Messenger" ? "◉" : title === "LinkedIn" ? "in" : "✉"}</span>

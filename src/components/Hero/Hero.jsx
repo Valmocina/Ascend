@@ -1,3 +1,4 @@
+import useScrollReveal from "../../hooks/useScrollReveal.js";
 import "./Hero.css";
 
 const stats = [
@@ -8,8 +9,10 @@ const stats = [
 ];
 
 export default function Hero() {
+  const reveal = useScrollReveal();
+
   return (
-    <section id="top" className="hero-section bg-[#04060a] px-5 py-12 sm:px-10 lg:px-16 lg:py-20">
+    <section ref={reveal.ref} id="top" className={`hero-section ${reveal.className} bg-[#04060a] px-5 py-12 sm:px-10 lg:px-16 lg:py-20`}>
       <div className="brand-bar mb-12" />
       <div className="mb-8 flex items-center gap-3">
         <span className="h-2 w-2 shrink-0 bg-emerald-500" />
@@ -27,7 +30,7 @@ export default function Hero() {
             <a className="border border-white/[0.08] px-5 py-3.5 text-sm font-semibold text-slate-400 no-underline" href="#services">Our Services</a>
           </div>
         </div>
-        <div className="grid grid-cols-2 pt-6 lg:pl-12 lg:pt-0">
+        <div className="reveal-stagger grid grid-cols-2 pt-6 lg:pl-12 lg:pt-0">
           {stats.map(([value, label, color], index) => (
             <div key={label} className={`p-5 ${index % 2 === 0 ? "border-r border-white/[0.03]" : ""} ${index < 2 ? "border-b border-white/[0.03]" : ""}`}>
               <div className="font-display text-4xl leading-none" style={{ color }}>{value}</div>

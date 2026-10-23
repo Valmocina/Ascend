@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SectionLabel from "../SectionLabel/SectionLabel.jsx";
+import useScrollReveal from "../../hooks/useScrollReveal.js";
 import "./FAQ.css";
 
 const questions = [
@@ -11,16 +12,17 @@ const questions = [
 
 export default function FAQ() {
   const [openQuestion, setOpenQuestion] = useState(null);
+  const reveal = useScrollReveal();
 
   return (
-    <section id="faq" className="faq-section bg-[#021a12] px-5 py-12 sm:px-10 lg:px-16 lg:py-20">
+    <section ref={reveal.ref} id="faq" className={`faq-section ${reveal.className} bg-[#021a12] px-5 py-12 sm:px-10 lg:px-16 lg:py-20`}>
       <div className="faq-section__layout grid items-start gap-6 lg:grid-cols-[1fr_2fr] lg:gap-20">
         <div className="lg:sticky lg:top-8">
           <SectionLabel color="#34d399" line="#10b981">FAQ</SectionLabel>
           <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-tight text-white">Common <em className="text-emerald-400">questions.</em></h2>
           <p className="mt-4 text-[1.0625rem] leading-[1.75] text-emerald-300">Can't find your answer? Reach out via Messenger or email — we reply fast.</p>
         </div>
-        <div className="border-t border-white/[0.06]">
+        <div className="faq-section__questions reveal-stagger border-t border-white/[0.06]">
           {questions.map(([question, answer], index) => {
             const isOpen = openQuestion === index;
             return (

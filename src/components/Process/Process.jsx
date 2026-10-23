@@ -1,4 +1,5 @@
 import SectionLabel from "../SectionLabel/SectionLabel.jsx";
+import useScrollReveal from "../../hooks/useScrollReveal.js";
 import "./Process.css";
 
 const steps = [
@@ -8,11 +9,13 @@ const steps = [
 ];
 
 export default function Process() {
+  const reveal = useScrollReveal();
+
   return (
-    <section id="process" className="process-section bg-[#0a1628] px-5 py-12 sm:px-10 lg:px-16 lg:py-20">
+    <section ref={reveal.ref} id="process" className={`process-section ${reveal.className} bg-[#0a1628] px-5 py-12 sm:px-10 lg:px-16 lg:py-20`}>
       <SectionLabel color="#60a5fa" line="#3b82f6">How It Works</SectionLabel>
       <h2 className="mb-12 font-display text-[clamp(1.75rem,4vw,3rem)] leading-tight text-white">Up and running in <em className="text-blue-400">three steps.</em></h2>
-      <div className="process-section__grid grid gap-6 lg:grid-cols-3">
+      <div className="process-section__grid reveal-stagger grid gap-6 lg:grid-cols-3">
         {steps.map(([number, title, description, color, background]) => (
           <article key={number} className="border-t-[3px] p-7" style={{ backgroundColor: background, borderColor: color }}>
             <div className="mb-5 font-display text-6xl leading-none opacity-30" style={{ color }}>{number}</div>
