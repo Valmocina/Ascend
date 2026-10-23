@@ -1,0 +1,9 @@
+.sidebar__link:hover {
+  border-left-color: var(--link-color);
+}
+
+@media (min-width: 901px) {
+  .mobile-drawer {
+    display: none;
+  }
+}

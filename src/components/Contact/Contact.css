@@ -1,0 +1,46 @@
+.contact-section {
+  scroll-margin-top: 54px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid;
+  padding: 1rem 1.25rem;
+  color: white;
+  text-decoration: none;
+  transition: filter 150ms ease;
+}
+
+.contact-card:hover {
+  filter: brightness(1.25);
+}
+
+.contact-card--facebook {
+  border-color: #3b82f630;
+  background: #3b82f612;
+  color: #3b82f6;
+}
+
+.contact-card--messenger {
+  border-color: #8b5cf630;
+  background: #8b5cf612;
+  color: #8b5cf6;
+}
+
+.contact-card--email {
+  border-color: #10b98130;
+  background: #10b98112;
+  color: #10b981;
+}
+
+.contact-section__layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .contact-section__layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,14 @@
+.app {
+  min-height: 100vh;
+}
+
+.app__main {
+  padding-top: 54px;
+}
+
+@media (min-width: 901px) {
+  .app__main {
+    margin-left: 260px;
+    padding-top: 0;
+  }
+}

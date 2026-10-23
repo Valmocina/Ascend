@@ -1,0 +1,16 @@
+.services-section,
+.hero-section,
+.process-section,
+.faq-section {
+  scroll-margin-top: 54px;
+}
+
+.services-section__grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 901px) {
+  .services-section__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
