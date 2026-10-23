@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { businessAddress, directionsUrl } from "../../data/businessLocation.js";
 import logo from "../../../logo.png";
 import "./Sidebar.css";
 
@@ -53,7 +54,9 @@ export default function Sidebar() {
         <div className="flex flex-col gap-2.5 border-t border-white/[0.04] px-6 py-5 text-sm leading-snug text-slate-600">
           <p>☎ <span className="ml-1">0952 441 6825</span></p>
           <p className="break-all">✉ <span className="ml-1">ascend.bsolutions.ph@outlook.com</span></p>
-          <p>⌖ <span className="ml-1">Parañaque, Philippines</span></p>
+          <a className="sidebar__address" href={directionsUrl} target="_blank" rel="noopener noreferrer">
+            ⌖ <span>{businessAddress}</span>
+          </a>
         </div>
         <div className="border-t border-white/[0.04] p-6">
           <a href="#contact" className="block bg-gradient-to-br from-violet-600 to-blue-500 p-3.5 text-center text-[0.95rem] font-bold tracking-wide text-white no-underline transition-opacity hover:opacity-85">

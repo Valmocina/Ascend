@@ -1,5 +1,6 @@
 import SectionLabel from "../SectionLabel/SectionLabel.jsx";
 import useScrollReveal from "../../hooks/useScrollReveal.js";
+import { businessAddress, directionsUrl } from "../../data/businessLocation.js";
 import logo from "../../../logo.png";
 import "./Contact.css";
 
@@ -43,7 +44,9 @@ export default function Contact() {
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-3 border-t border-white/[0.06] pt-5 text-[0.9375rem] font-medium text-slate-300">
             <span>☎ <span className="ml-1">0952 441 6825</span></span>
-            <span>⌖ <span className="ml-1">Parañaque, Philippines</span></span>
+            <a className="contact-location" href={directionsUrl} target="_blank" rel="noopener noreferrer">
+              ⌖ <span className="ml-1">{businessAddress}</span>
+            </a>
           </div>
         </div>
       </div>

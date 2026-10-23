@@ -1,5 +1,6 @@
 import logo from "../../../logo.png";
 import useScrollReveal from "../../hooks/useScrollReveal.js";
+import { businessAddress, directionsUrl } from "../../data/businessLocation.js";
 import "./Footer.css";
 
 const serviceLinks = ["Executive Assistance", "Operations Support", "Cold Calling", "Social Media", "Lead Generation", "Bookkeeping"];
@@ -55,7 +56,10 @@ export default function Footer() {
       </div>
       <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06] pt-6 text-sm text-slate-500">
         <p>© 2025 Ascend Business Solutions. All rights reserved.</p>
-        <p>Parañaque, Philippines · Serving Businesses Worldwide</p>
+        <p>
+          <a className="footer-link" href={directionsUrl} target="_blank" rel="noopener noreferrer">{businessAddress}</a>
+          {" · Serving Businesses Worldwide"}
+        </p>
       </div>
     </footer>
   );

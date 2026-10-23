@@ -2,6 +2,19 @@
   scroll-margin-top: 54px;
 }
 
+.contact-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.contact-location:hover {
+  color: #c4b5fd;
+}
+
 .contact-card {
   display: flex;
   align-items: center;

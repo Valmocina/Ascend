@@ -2,6 +2,20 @@
   border-left-color: var(--link-color);
 }
 
+.sidebar__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 150ms ease;
+}
+
+.sidebar__address:hover {
+  color: #c4b5fd;
+}
+
 @media (min-width: 901px) {
   .mobile-drawer {
     display: none;
