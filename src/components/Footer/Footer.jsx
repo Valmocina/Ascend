@@ -4,7 +4,7 @@ import "./Footer.css";
 const serviceLinks = ["Executive Assistance", "Operations Support", "Cold Calling", "Social Media", "Lead Generation", "Bookkeeping"];
 const contactLinks = [
   ["Facebook", "https://www.facebook.com/profile.php?id=61562351609924"],
-  ["Messenger", "https://m.me/ascendbsolutions"],
+  ["Messenger", "https://m.me/61562351609924"],
   ["LinkedIn", "https://www.linkedin.com/company/ascend-business-solutions-ph/home/"],
   ["ascend.bsolutions.ph@outlook.com", "mailto:ascend.bsolutions.ph@outlook.com"],
   ["0952 441 6825", "tel:+639524416825"],

@@ -4,7 +4,7 @@ import "./Contact.css";
 
 const contacts = [
   ["Facebook", "facebook.com/profile.php?id=61562351609924", "https://www.facebook.com/profile.php?id=61562351609924", "contact-card--facebook"],
-  ["Messenger", "m.me/ascendbsolutions", "https://m.me/ascendbsolutions", "contact-card--messenger"],
+  ["Messenger", "m.me/61562351609924", "https://m.me/61562351609924", "contact-card--messenger"],
   ["LinkedIn", "linkedin.com/company/ascend-business-solutions-ph", "https://www.linkedin.com/company/ascend-business-solutions-ph/home/", "contact-card--linkedin"],
   ["Email Us", "ascend.bsolutions.ph@outlook.com", "mailto:ascend.bsolutions.ph@outlook.com", "contact-card--email"],
 ];
