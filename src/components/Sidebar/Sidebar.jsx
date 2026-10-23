@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../../../logo.png";
 import "./Sidebar.css";
 
 const navigation = [
@@ -15,7 +16,7 @@ export default function Sidebar() {
     <>
       <div className="fixed inset-x-0 top-0 z-[200] flex h-[54px] items-center justify-between border-b border-white/[0.04] bg-[#04060a] px-5 lg:hidden">
         <a href="#top" aria-label="Ascend Business Solutions home">
-          <img className="h-8 w-8 rounded-full object-cover" src="/logo.png" alt="Ascend Business Solutions" />
+          <img className="h-8 w-8 rounded-full object-cover" src={logo} alt="Ascend Business Solutions" />
         </a>
         <button
           className="cursor-pointer border-0 bg-transparent text-[1.375rem] text-white"
@@ -39,7 +40,7 @@ export default function Sidebar() {
       </nav>
       <aside className="fixed inset-y-0 left-0 z-[100] hidden w-[260px] flex-col overflow-y-auto border-r border-white/[0.04] bg-[#04060a] lg:flex">
         <a href="#top" className="border-b border-white/[0.04] p-6 no-underline">
-          <img className="block h-[130px] w-[130px] rounded-full object-cover" src="/logo.png" alt="Ascend Business Solutions logo" />
+          <img className="block h-[130px] w-[130px] rounded-full object-cover" src={logo} alt="Ascend Business Solutions logo" />
         </a>
         <nav className="flex flex-1 flex-col gap-0.5 py-5" aria-label="Main navigation">
           {navigation.map(([label, href, color]) => (

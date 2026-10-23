@@ -1,4 +1,5 @@
 import SectionLabel from "../SectionLabel/SectionLabel.jsx";
+import logo from "../../../logo.png";
 import "./Contact.css";
 
 const contacts = [
@@ -13,7 +14,7 @@ export default function Contact() {
       <div className="contact-section__layout grid lg:grid-cols-2">
         <div className="relative flex min-h-[360px] flex-col items-center justify-center overflow-hidden bg-[#08041a] px-8 py-14 lg:min-h-[540px]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,#8b5cf620_0%,transparent_70%)]" />
-          <img className="relative mb-8 h-48 w-48 rounded-full object-cover lg:h-60 lg:w-60" src="/logo.png" alt="Ascend Business Solutions" />
+          <img className="relative mb-8 h-48 w-48 rounded-full object-cover lg:h-60 lg:w-60" src={logo} alt="Ascend Business Solutions" />
           <div className="relative text-center">
             <div className="mb-2 font-display text-lg text-white">Ascend Business Solutions</div>
             <div className="text-xs font-semibold uppercase tracking-wider text-violet-700">Reliable People. Exceptional Results.</div>

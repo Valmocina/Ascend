@@ -1,3 +1,4 @@
+import logo from "../../../logo.png";
 import "./Footer.css";
 
 const serviceLinks = ["Executive Assistance", "Operations Support", "Cold Calling", "Social Media", "Lead Generation", "Bookkeeping"];
@@ -21,7 +22,7 @@ export default function Footer() {
     <footer className="footer-section bg-[#020408] px-5 py-10 sm:px-10 lg:px-16">
       <div className="footer-section__columns mb-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] lg:gap-12">
         <div>
-          <img className="mb-4 h-[100px] w-[100px] rounded-full object-cover" src="/logo.png" alt="Ascend Business Solutions" />
+          <img className="mb-4 h-[100px] w-[100px] rounded-full object-cover" src={logo} alt="Ascend Business Solutions" />
           <p className="mb-6 max-w-xs text-base leading-[1.7] text-slate-400">Reliable People. Exceptional Results. — Serving businesses worldwide from the Philippines.</p>
           <div className="flex gap-2">
             {["FB", "MSG", "✉"].map((label, index) => (
