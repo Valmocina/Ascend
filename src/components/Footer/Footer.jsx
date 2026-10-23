@@ -3,10 +3,17 @@ import "./Footer.css";
 
 const serviceLinks = ["Executive Assistance", "Operations Support", "Cold Calling", "Social Media", "Lead Generation", "Bookkeeping"];
 const contactLinks = [
-  ["Facebook", "https://www.facebook.com/ascendbsolutions"],
+  ["Facebook", "https://www.facebook.com/profile.php?id=61562351609924"],
   ["Messenger", "https://m.me/ascendbsolutions"],
+  ["LinkedIn", "https://www.linkedin.com/company/ascend-business-solutions-ph/home/"],
   ["ascend.bsolutions.ph@outlook.com", "mailto:ascend.bsolutions.ph@outlook.com"],
   ["0952 441 6825", "tel:+639524416825"],
+];
+const socialLinks = [
+  ["FB", contactLinks[0][1], 0],
+  ["MSG", contactLinks[1][1], 1],
+  ["in", contactLinks[2][1], 2],
+  ["✉", contactLinks[3][1], 3],
 ];
 
 function FooterLink({ href, children, external = false }) {
@@ -25,8 +32,8 @@ export default function Footer() {
           <img className="mb-4 h-[100px] w-[100px] rounded-full object-cover" src={logo} alt="Ascend Business Solutions" />
           <p className="mb-6 max-w-xs text-base leading-[1.7] text-slate-400">Reliable People. Exceptional Results. — Serving businesses worldwide from the Philippines.</p>
           <div className="flex gap-2">
-            {["FB", "MSG", "✉"].map((label, index) => (
-              <a key={label} href={contactLinks[index][1]} target={index < 2 ? "_blank" : undefined} rel={index < 2 ? "noopener noreferrer" : undefined} className={`footer-social footer-social--${index}`}>
+            {socialLinks.map(([label, href, index]) => (
+              <a key={label} href={href} target={index < 3 ? "_blank" : undefined} rel={index < 3 ? "noopener noreferrer" : undefined} className={`footer-social footer-social--${index}`}>
                 {label}
               </a>
             ))}
@@ -38,8 +45,8 @@ export default function Footer() {
         </div>
         <div>
           <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-100">Contact</h3>
-          {contactLinks.map(([label, href], index) => (
-            <FooterLink key={label} href={href} external={index < 2}>{label}</FooterLink>
+          {contactLinks.map(([label, href]) => (
+            <FooterLink key={label} href={href} external={href.startsWith("https://")}>{label}</FooterLink>
           ))}
         </div>
       </div>

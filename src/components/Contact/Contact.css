@@ -29,6 +29,12 @@
   color: #8b5cf6;
 }
 
+.contact-card--linkedin {
+  border-color: #0a66c230;
+  background: #0a66c212;
+  color: #0a66c2;
+}
+
 .contact-card--email {
   border-color: #10b98130;
   background: #10b98112;

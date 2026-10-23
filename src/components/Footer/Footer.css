@@ -33,6 +33,11 @@
 }
 
 .footer-social--2 {
+  border-color: #0a66c240;
+  color: #0a66c2;
+}
+
+.footer-social--3 {
   border-color: #10b98140;
   color: #10b981;
 }

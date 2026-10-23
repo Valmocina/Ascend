@@ -3,8 +3,9 @@ import logo from "../../../logo.png";
 import "./Contact.css";
 
 const contacts = [
-  ["Facebook", "facebook.com/ascendbsolutions", "https://www.facebook.com/ascendbsolutions", "contact-card--facebook"],
+  ["Facebook", "facebook.com/profile.php?id=61562351609924", "https://www.facebook.com/profile.php?id=61562351609924", "contact-card--facebook"],
   ["Messenger", "m.me/ascendbsolutions", "https://m.me/ascendbsolutions", "contact-card--messenger"],
+  ["LinkedIn", "linkedin.com/company/ascend-business-solutions-ph", "https://www.linkedin.com/company/ascend-business-solutions-ph/home/", "contact-card--linkedin"],
   ["Email Us", "ascend.bsolutions.ph@outlook.com", "mailto:ascend.bsolutions.ph@outlook.com", "contact-card--email"],
 ];
 
@@ -28,7 +29,7 @@ export default function Contact() {
           <div className="mb-8 flex flex-col gap-3">
             {contacts.map(([title, detail, href, style]) => (
               <a key={title} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className={`contact-card ${style}`}>
-                <span className="text-xl" aria-hidden="true">{title === "Facebook" ? "f" : title === "Messenger" ? "◉" : "✉"}</span>
+                <span className="text-xl" aria-hidden="true">{title === "Facebook" ? "f" : title === "Messenger" ? "◉" : title === "LinkedIn" ? "in" : "✉"}</span>
                 <span className="min-w-0">
                   <span className="block text-base font-semibold text-slate-50">{title}</span>
                   <span className="block break-all text-sm text-slate-400">{detail}</span>
