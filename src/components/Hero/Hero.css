@@ -1,3 +1,178 @@
 .hero-section {
-  scroll-margin-top: 54px;
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 7rem 1.5rem 9rem;
+  scroll-margin-top: 86px;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgb(59 130 246 / 10%), transparent 32%),
+    radial-gradient(ellipse at 27% 55%, rgb(139 92 246 / 17%), transparent 38%),
+    radial-gradient(ellipse at 75% 40%, rgb(16 185 129 / 11%), transparent 34%),
+    radial-gradient(ellipse at 50% 100%, rgb(30 16 64 / 46%), transparent 48%),
+    #04060a;
+}
+
+.hero-section__stars {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.72;
+  background-image:
+    radial-gradient(1px 1px at 8% 22%, #dbeafe 99%, transparent),
+    radial-gradient(1px 1px at 17% 58%, #8b5cf6 99%, transparent),
+    radial-gradient(1px 1px at 28% 14%, #fff 99%, transparent),
+    radial-gradient(1.5px 1.5px at 39% 46%, #bfdbfe 99%, transparent),
+    radial-gradient(1px 1px at 58% 23%, #fff 99%, transparent),
+    radial-gradient(1px 1px at 69% 62%, #10b981 99%, transparent),
+    radial-gradient(1px 1px at 82% 31%, #dbeafe 99%, transparent),
+    radial-gradient(1px 1px at 93% 55%, #fff 99%, transparent);
+  background-size: 337px 251px, 419px 313px, 271px 193px, 503px 337px, 367px 283px, 459px 307px, 311px 227px, 557px 359px;
+  mask-image: radial-gradient(ellipse at center, #000 25%, transparent 88%);
+}
+
+.hero-section__content {
+  z-index: 2;
+  width: min(100%, 820px);
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.hero-section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 1.4rem;
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-section__eyebrow span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 12px rgb(16 185 129 / 75%);
+}
+
+.hero-section h1 {
+  margin: 0;
+  color: #f8fafc;
+  font-family: var(--font-body);
+  font-size: clamp(2.25rem, 6.2vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  text-transform: uppercase;
+  text-shadow: 0 3px 28px rgb(0 0 0 / 50%);
+}
+
+.hero-section h1 span {
+  background: linear-gradient(110deg, #8b5cf6 12%, #3b82f6 56%, #10b981 95%);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.hero-section__intro {
+  margin: 1.15rem 0 1.5rem;
+  color: #cbd5e1;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+}
+
+.hero-section__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.3rem;
+  border: 1px solid rgb(139 92 246 / 45%);
+  background: linear-gradient(110deg, rgb(139 92 246 / 17%), rgb(59 130 246 / 13%), rgb(16 185 129 / 12%));
+  box-shadow: 0 0 30px rgb(59 130 246 / 10%);
+  color: #f8fafc;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.hero-section__cta:hover {
+  transform: translateY(-2px);
+  border-color: #10b981;
+  box-shadow: 0 0 30px rgb(16 185 129 / 24%);
+}
+
+.hero-section__scroll {
+  position: absolute;
+  z-index: 2;
+  top: 49%;
+  color: #cbd5e1;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.hero-section__scroll::after {
+  display: inline-block;
+  width: 1px;
+  height: 35px;
+  margin: 0.8rem auto 0;
+  background: linear-gradient(#8b5cf6, #10b981);
+  content: "";
+}
+
+.hero-section__scroll--left {
+  left: 3.5%;
+  transform: rotate(180deg);
+}
+
+.hero-section__scroll--right {
+  right: 3.5%;
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 760px;
+    padding: 8rem 1.25rem 11rem;
+  }
+
+  .hero-section__content {
+    margin-top: 2rem;
+  }
+
+  .hero-section__eyebrow {
+    max-width: 100%;
+    justify-content: center;
+    font-size: 0.59rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-section__scroll {
+    top: auto;
+    bottom: 26%;
+    font-size: 0.54rem;
+  }
+
+  .hero-section__scroll--left {
+    left: 1rem;
+  }
+
+  .hero-section__scroll--right {
+    right: 1rem;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-section__cta {
+    transition: none;
+  }
 }

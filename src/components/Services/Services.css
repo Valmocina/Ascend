@@ -2,11 +2,28 @@
 .hero-section,
 .process-section,
 .faq-section {
-  scroll-margin-top: 54px;
+  scroll-margin-top: 86px;
+}
+
+.services-section {
+  background:
+    radial-gradient(ellipse at 12% 18%, rgb(139 92 246 / 9%), transparent 35%),
+    #080b10;
 }
 
 .services-section__grid {
   grid-template-columns: 1fr;
+  border: 1px solid rgb(255 255 255 / 8%);
+}
+
+.service-card {
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition: background-color 180ms ease, outline-color 180ms ease;
+}
+
+.service-card:hover {
+  outline-color: rgb(139 92 246 / 28%);
 }
 
 @media (min-width: 901px) {

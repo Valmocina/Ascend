@@ -2,6 +2,18 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.process-section {
+  background:
+    radial-gradient(ellipse at 90% 28%, rgb(59 130 246 / 8%), transparent 38%),
+    #080b10;
+}
+
+.process-section__grid article {
+  border-right: 1px solid rgb(255 255 255 / 5%);
+  border-bottom: 1px solid rgb(255 255 255 / 5%);
+  border-left: 1px solid rgb(255 255 255 / 5%);
+}
+
 @media (max-width: 900px) {
   .process-section__grid {
     grid-template-columns: 1fr;

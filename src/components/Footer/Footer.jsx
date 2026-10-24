@@ -8,7 +8,7 @@ const contactLinks = [
   ["Facebook", "https://www.facebook.com/profile.php?id=61562351609924"],
   ["Messenger", "https://m.me/61562351609924"],
   ["LinkedIn", "https://www.linkedin.com/company/ascend-business-solutions-ph/home/"],
-  ["ascend.bsolutions.ph@outlook.com", "mailto:ascend.bsolutions.ph@outlook.com"],
+  ["ascend.bsolutions.ph@outlook.com", "https://outlook.office.com/mail/deeplink/compose?to=ascend.bsolutions.ph%40outlook.com"],
   ["0952 441 6825", "tel:+639524416825"],
 ];
 const socialLinks = [
@@ -30,14 +30,14 @@ export default function Footer() {
   const reveal = useScrollReveal();
 
   return (
-    <footer ref={reveal.ref} className={`footer-section ${reveal.className} bg-[#020408] px-5 py-10 sm:px-10 lg:px-16`}>
+    <footer ref={reveal.ref} className={`footer-section ${reveal.className} bg-[#080b10] px-5 py-10 sm:px-10 lg:px-16`}>
       <div className="footer-section__columns reveal-stagger mb-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] lg:gap-12">
         <div>
           <img className="mb-4 h-[100px] w-[100px] rounded-full object-cover" src={logo} alt="Ascend Business Solutions" />
           <p className="mb-6 max-w-xs text-base leading-[1.7] text-slate-400">Reliable People. Exceptional Results. — Serving businesses worldwide from the Philippines.</p>
           <div className="flex gap-2">
             {socialLinks.map(([label, href, index]) => (
-              <a key={label} href={href} target={index < 3 ? "_blank" : undefined} rel={index < 3 ? "noopener noreferrer" : undefined} className={`footer-social footer-social--${index}`}>
+              <a key={label} href={href} target={href.startsWith("https://") ? "_blank" : undefined} rel={href.startsWith("https://") ? "noopener noreferrer" : undefined} className={`footer-social footer-social--${index}`}>
                 {label}
               </a>
             ))}

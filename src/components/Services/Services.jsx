@@ -19,15 +19,15 @@ export default function Services() {
   const reveal = useScrollReveal();
 
   return (
-    <section ref={reveal.ref} id="services" className={`services-section ${reveal.className} bg-[#1e1040] px-5 py-12 sm:px-10 lg:px-16 lg:py-20`}>
+    <section ref={reveal.ref} id="services" className={`services-section ${reveal.className} px-5 py-12 sm:px-10 lg:px-16 lg:py-20`}>
       <SectionLabel>What We Offer</SectionLabel>
       <h2 className="mb-3 font-display text-[clamp(1.75rem,4vw,3rem)] leading-tight text-white">Our <em className="text-violet-300">Services</em></h2>
-      <p className="mb-10 max-w-2xl text-lg leading-[1.75] text-violet-200">
+      <p className="mb-10 max-w-2xl text-lg leading-[1.75] text-slate-300">
         Request what you need — we can provide it. From executive support to bookkeeping, our VAs are trained across every business function.
       </p>
       <div className="services-section__grid reveal-stagger grid gap-px bg-white/[0.08]">
         {services.map(([title, description, color]) => (
-          <article key={title} className="bg-[#0a0e16] p-7 transition-colors hover:bg-[#0f1420]">
+          <article key={title} className="service-card bg-[#0b111b] p-7 transition-colors hover:bg-[#101824]">
             <div className="mb-3 flex items-center gap-3">
               <span className="h-2 w-2 shrink-0" style={{ backgroundColor: color }} />
               <h3 className="text-[1.0625rem] font-bold tracking-wide text-slate-50">{title}</h3>

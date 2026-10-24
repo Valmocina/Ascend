@@ -1,5 +1,12 @@
 .contact-section {
-  scroll-margin-top: 54px;
+  scroll-margin-top: 86px;
+  background:
+    radial-gradient(ellipse at 8% 48%, rgb(139 92 246 / 8%), transparent 34%),
+    #080b10;
+}
+
+.contact-section__brand-panel {
+  background: #0b0e16;
 }
 
 .contact-location {
